@@ -26,5 +26,30 @@
         </li>
         @endcanany
 
+        @canany(['isAdmin'])
+        <li class="nav-item">
+            <a class="nav-link {{(request()->segment(1)=='configuracion') ? 'active':'' }}" href="{{ route('configuracion.index') }}">
+                <i class="ni ni-paper-diploma text-orange"></i>
+                <span class="nav-link-text">Configuracion</span>
+            </a>
+        </li>
+        @endcanany
+
+        <li class="nav-item">
+            <a class="nav-link {{(request()->segment(1)=='actividades') ? 'active':'' }}" href="{{ route('actividades.index') }}">
+                <i class="ni ni-paper-diploma text-orange"></i>
+                <span class="nav-link-text">Actividades</span>
+            </a>
+        </li>
+
+        @canany(['isAdmin'])
+        <li class="nav-item">
+            <a class="nav-link {{(request()->segment(1)=='entrenadores') ? 'active':'' }}" href="{{ route('entrenadores.index') }}">
+                <i class="ni ni-paper-diploma text-orange"></i>
+                <span class="nav-link-text">Entrenadores</span>
+            </a>
+        </li>
+        @endcanany
+
     </ul>
 </div>
